@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aklima Zaman – CV</title>
+  <style>
+    /* ── Reset & base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6f8;
+      color: #2d2d2d;
+      line-height: 1.6;
+    }
+
+    a { color: #0073e6; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.10);
+      overflow: hidden;
+    }
+
+    /* ── Header / hero ── */
+    header {
+      background: linear-gradient(135deg, #0073e6 0%, #00b4d8 100%);
+      color: #fff;
+      padding: 48px 48px 40px;
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,.6);
+      background: rgba(255,255,255,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      flex-shrink: 0;
+    }
+
+    .hero-text h1 { font-size: 2rem; font-weight: 700; letter-spacing: .5px; }
+    .hero-text .subtitle { font-size: 1.1rem; opacity: .9; margin-top: 4px; }
+    .hero-text .contacts { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .contacts a {
+      color: #fff;
+      background: rgba(255,255,255,.2);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: .85rem;
+      border: 1px solid rgba(255,255,255,.35);
+      transition: background .2s;
+    }
+    .contacts a:hover { background: rgba(255,255,255,.35); text-decoration: none; }
+
+    /* ── Main two-column body ── */
+    .body {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      background: #f0f4f8;
+      padding: 36px 28px;
+      border-right: 1px solid #e2e8f0;
+    }
+
+    aside section { margin-bottom: 32px; }
+
+    /* ── Main content ── */
+    main { padding: 36px 40px; }
+
+    main section { margin-bottom: 32px; }
+
+    /* ── Section headings ── */
+    h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: #0073e6;
+      border-bottom: 2px solid #0073e6;
+      padding-bottom: 6px;
+      margin-bottom: 18px;
+    }
+
+    /* ── Skills ── */
+    .skill-list { list-style: none; }
+    .skill-list li {
+      margin-bottom: 10px;
+      font-size: .9rem;
+    }
+    .skill-list li span {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .bar-track {
+      background: #dde3ec;
+      border-radius: 99px;
+      height: 8px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, #0073e6, #00b4d8);
+    }
+
+    /* ── Languages ── */
+    .lang-list { list-style: none; }
+    .lang-list li {
+      display: flex;
+      justify-content: space-between;
+      font-size: .9rem;
+      margin-bottom: 6px;
+    }
+    .level-badge {
+      font-size: .75rem;
+      background: #dde3ec;
+      border-radius: 12px;
+      padding: 2px 10px;
+      color: #4a5568;
+    }
+
+    /* ── Education / Experience items ── */
+    .entry { margin-bottom: 22px; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .entry-title { font-weight: 700; font-size: 1rem; }
+    .entry-date {
+      font-size: .8rem;
+      color: #718096;
+      white-space: nowrap;
+    }
+    .entry-sub { color: #4a5568; font-size: .9rem; margin-bottom: 6px; }
+    .entry p, .entry ul { font-size: .9rem; color: #4a5568; }
+    .entry ul { padding-left: 18px; }
+    .entry ul li { margin-bottom: 4px; }
+
+    /* ── Interest tags ── */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #e8f0fe;
+      color: #0073e6;
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: .82rem;
+      font-weight: 500;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 680px) {
+      header { flex-direction: column; padding: 32px 24px 28px; }
+      .body { grid-template-columns: 1fr; }
+      aside { border-right: none; border-bottom: 1px solid #e2e8f0; }
+      main { padding: 28px 24px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ════ HEADER ════ -->
+  <header>
+    <div class="avatar">👩‍💻</div>
+    <div class="hero-text">
+      <h1>Aklima Zaman</h1>
+      <div class="subtitle">Software Engineer &amp; Researcher</div>
+      <div class="contacts">
+        <a href="mailto:aklimazaman@example.com">✉ aklimazaman@example.com</a>
+        <a href="https://github.com/aklimazaman" target="_blank" rel="noopener">⌂ GitHub</a>
+        <a href="https://linkedin.com/in/aklimazaman" target="_blank" rel="noopener">in LinkedIn</a>
+        <a href="https://aklimazaman.github.io" target="_blank" rel="noopener">🌐 aklimazaman.github.io</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+
+    <!-- ════ SIDEBAR ════ -->
+    <aside>
+
+      <section>
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li>
+            <span>Python</span>
+            <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+          </li>
+          <li>
+            <span>JavaScript / TypeScript</span>
+            <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+          </li>
+          <li>
+            <span>Java</span>
+            <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+          </li>
+          <li>
+            <span>HTML &amp; CSS</span>
+            <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+          </li>
+          <li>
+            <span>SQL / NoSQL</span>
+            <div class="bar-track"><div class="bar-fill" style="width:70%"></div></div>
+          </li>
+          <li>
+            <span>Git &amp; GitHub</span>
+            <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+          </li>
+          <li>
+            <span>Machine Learning</span>
+            <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Languages</h2>
+        <ul class="lang-list">
+          <li>Bengali <span class="level-badge">Native</span></li>
+          <li>English <span class="level-badge">Fluent</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Interests</h2>
+        <div class="tags">
+          <span class="tag">Open Source</span>
+          <span class="tag">AI / ML</span>
+          <span class="tag">Web Dev</span>
+          <span class="tag">Research</span>
+          <span class="tag">Teaching</span>
+        </div>
+      </section>
+
+    </aside>
+
+    <!-- ════ MAIN ════ -->
+    <main>
+
+      <section>
+        <h2>About Me</h2>
+        <p>
+          I am a passionate software engineer and researcher with a strong interest in
+          artificial intelligence, machine learning, and full-stack web development.
+          I enjoy building impactful software solutions and contributing to open-source
+          projects. I am always eager to learn new technologies and collaborate with
+          like-minded professionals.
+        </p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Software Engineer</span>
+            <span class="entry-date">2023 – Present</span>
+          </div>
+          <div class="entry-sub">Company / Organization Name, Location</div>
+          <ul>
+            <li>Designed and developed scalable backend services using Python and REST APIs.</li>
+            <li>Collaborated with cross-functional teams to deliver features on time.</li>
+            <li>Improved system performance by 30% through query optimization and caching.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Research Assistant</span>
+            <span class="entry-date">2021 – 2023</span>
+          </div>
+          <div class="entry-sub">University / Research Lab, Location</div>
+          <ul>
+            <li>Conducted research on natural language processing and text classification.</li>
+            <li>Published findings in peer-reviewed conferences.</li>
+            <li>Mentored junior students in programming and research methodology.</li>
+          </ul>
+        </div>
+
+      </section>
+
+      <section>
+        <h2>Education</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">M.Sc. in Computer Science</span>
+            <span class="entry-date">2019 – 2021</span>
+          </div>
+          <div class="entry-sub">University Name, Country</div>
+          <p>Thesis: <em>Deep Learning Approaches for Bangla Text Classification</em></p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">B.Sc. in Computer Science &amp; Engineering</span>
+            <span class="entry-date">2015 – 2019</span>
+          </div>
+          <div class="entry-sub">University Name, Country</div>
+          <p>CGPA: 3.80 / 4.00 – Dean's List</p>
+        </div>
+
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Bangla NLP Toolkit</span>
+            <span class="entry-date">
+              <a href="https://github.com/aklimazaman" target="_blank" rel="noopener">GitHub ↗</a>
+            </span>
+          </div>
+          <p>
+            An open-source Python library providing tokenization, stemming, and
+            sentiment analysis for the Bangla language.
+          </p>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Personal CV Site</span>
+            <span class="entry-date">
+              <a href="https://aklimazaman.github.io" target="_blank" rel="noopener">Live ↗</a>
+            </span>
+          </div>
+          <p>
+            Static HTML/CSS portfolio page hosted on GitHub Pages — the very page you are reading now.
+          </p>
+        </div>
+
+      </section>
+
+      <section>
+        <h2>Publications</h2>
+        <div class="entry">
+          <p>
+            A. Zaman et al., "Title of the Paper," in <em>Proceedings of Conference Name</em>,
+            Year. <a href="#">[PDF]</a>
+          </p>
+        </div>
+      </section>
+
+    </main>
+  </div><!-- /.body -->
+
+</div><!-- /.page -->
+</body>
+</html>
